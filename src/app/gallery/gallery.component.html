@@ -1,0 +1,16 @@
+<h2>Imágenes</h2>
+
+<ul class="images">
+    <!-- <li *ngFor="let image of images" (click)="onSelect(image)"> -->
+    <li *ngFor="let image of images" routerLink="/detail/{{image.id}}">
+        <div *ngIf="image.imageFile!=''">
+                <img src="{{'http://localhost:8000/' + image.imageFile}}" width="100%" height="100%" />
+        </div>
+        <div *ngIf="image.imageFile==''">
+                  <img src="{{image.url}}" width="100%" height="100%" />
+        </div>        
+        <!-- <span class="badge">{{image.id}}</span> {{image.name}} <img src="{{image.url}}" width="20%" height="20%" /> <input [(ngModel)]="image.name" placeholder="Nombre"> -->
+    </li>
+</ul>
+
+<!-- <app-image-detail [image]="selectedImage"></app-image-detail> -->

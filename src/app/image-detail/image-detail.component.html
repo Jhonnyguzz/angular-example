@@ -1,0 +1,17 @@
+<div *ngIf="image">
+
+    <div *ngIf="image.imageFile!=''">
+        <img src="{{'http://localhost:8000/' + image.imageFile}}" width="30%" height="30%" />
+    </div>
+    <div *ngIf="image.imageFile==''">
+        <img src="{{image.url}}" width="30%" height="30%" />
+    </div>  
+    <!-- <img src="{{image.url}}" width="40%" height="40%" /> -->
+    <h2>{{image.name | uppercase}}</h2> 
+    <div> 
+        <label>Nombre de la imagen:
+        <input [(ngModel)]="image.name" placeholder="Nombre">
+        </label> 
+    </div>
+</div>
+<button (click)="goBack()">Go back</button>
